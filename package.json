@@ -1,0 +1,16 @@
+{
+  "name": "lucas-stackhouse-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Lucas Stackhouse",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["portfolio", "personal"],
+  "author": "Lucas Stackhouse",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
