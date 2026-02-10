@@ -2,10 +2,10 @@
   "name": "lucas-stackhouse-portfolio",
   "version": "1.0.0",
   "description": "Personal portfolio website for Lucas Stackhouse",
-  "main": "server.js",
+  "main": "backend/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
     "build": "echo 'No build needed'"
   },
   "keywords": ["portfolio", "personal"],
