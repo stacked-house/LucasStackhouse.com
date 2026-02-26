@@ -129,11 +129,21 @@
                 </div>
 
                 <div class="career-panel" id="panel-resume-pdf">
-                    <div class="resume-embed-actions">
-                        <a href="Resume/Lucas_Resume.pdf" target="_blank" class="resume-action-link">Open in new tab ↗</a>
-                        <a href="Resume/Lucas_Resume.pdf" download="Lucas_Stackhouse_Resume.pdf" class="resume-action-link">Download ↓</a>
+                    <div class="resume-viewer">
+                        <div class="resume-viewer-toolbar">
+                            <span class="viewer-filename">Lucas_Stackhouse_Resume.pdf</span>
+                            <div class="viewer-actions">
+                                <a href="Resume/Lucas_Resume.pdf" target="_blank" class="viewer-btn">Open ↗</a>
+                                <a href="Resume/Lucas_Resume.pdf" download="Lucas_Stackhouse_Resume.pdf" class="viewer-btn viewer-btn-primary">Download ↓</a>
+                            </div>
+                        </div>
+                        <div class="resume-viewer-stage">
+                            <div class="resume-canvas-wrapper">
+                                <div class="resume-loading" id="resume-loading">Loading resume...</div>
+                                <canvas id="resume-canvas"></canvas>
+                            </div>
+                        </div>
                     </div>
-                    <iframe src="Resume/Lucas_Resume.pdf#zoom=page-width" class="resume-iframe" title="Lucas Stackhouse Resume"></iframe>
                 </div>
             </div>
         </section>
@@ -299,6 +309,18 @@
             </div>
         </section>
     </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <p class="footer-name">Lucas Stackhouse</p>
+            <nav class="footer-links">
+                <a href="https://www.linkedin.com/in/lucas-stackhouse" target="_blank">LinkedIn</a>
+                <a href="https://github.com/stacked-house" target="_blank">GitHub</a>
+                <a href="mailto:lucas.stackhouse@colorado.edu">Email</a>
+            </nav>
+            <p class="footer-copy">&copy; 2026 Lucas Stackhouse. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

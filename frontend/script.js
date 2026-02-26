@@ -29,6 +29,7 @@ document.querySelectorAll('[data-page]').forEach(el => {
             const matchingTab = document.querySelector(`.career-tab[data-tab="${tabId}"]`);
             if (matchingTab) matchingTab.classList.add('active');
             document.getElementById(`panel-${tabId}`).classList.add('active');
+            if (tabId === 'resume-pdf') renderResumePDF();
         }
 
         // Update URL without triggering scroll
@@ -52,6 +53,49 @@ document.addEventListener('click', () => {
     document.querySelectorAll('.nav-item-dropdown').forEach(d => d.classList.remove('open'));
 });
 
+// PDF.js resume renderer
+let pdfRendered = false;
+
+async function renderResumePDF() {
+    if (pdfRendered) return;
+
+    if (!window.pdfjsLib) {
+        await new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    const canvas = document.getElementById('resume-canvas');
+    const loading = document.getElementById('resume-loading');
+    if (!canvas) return;
+
+    try {
+        const pdf = await pdfjsLib.getDocument('Resume/Lucas_Resume.pdf').promise;
+        const page = await pdf.getPage(1);
+
+        const containerWidth = canvas.parentElement.clientWidth;
+        const viewport = page.getViewport({ scale: 1 });
+        const scale = containerWidth / viewport.width;
+        const scaledViewport = page.getViewport({ scale });
+
+        canvas.width = scaledViewport.width;
+        canvas.height = scaledViewport.height;
+
+        await page.render({ canvasContext: canvas.getContext('2d'), viewport: scaledViewport }).promise;
+
+        if (loading) loading.style.display = 'none';
+        pdfRendered = true;
+    } catch (err) {
+        if (loading) loading.textContent = 'Could not load resume. Use the links above to open or download.';
+    }
+}
+
 // Handle career tab switcher (in-page)
 document.querySelectorAll('.career-tab').forEach(tab => {
     tab.addEventListener('click', () => {
@@ -60,6 +104,7 @@ document.querySelectorAll('.career-tab').forEach(tab => {
         document.querySelectorAll('.career-panel').forEach(p => p.classList.remove('active'));
         tab.classList.add('active');
         document.getElementById(`panel-${tabId}`).classList.add('active');
+        if (tabId === 'resume-pdf') renderResumePDF();
     });
 });
 

@@ -21,15 +21,20 @@ html {
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     color: var(--text-dark);
-    background-color: var(--bg-light);
+    background: linear-gradient(180deg, #eef1ff 0%, #f7fafc 30%);
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 /* Header & Navigation */
 .header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    padding: 4rem 2rem;
+    padding: 2rem;
     text-align: center;
     box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .hero-section {
@@ -38,11 +43,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .logo h1 {
-    font-size: 3rem;
+    font-size: 2.25rem;
     color: var(--white);
     font-weight: 700;
     margin: 0;
@@ -417,31 +422,87 @@ body {
     animation: fadeIn 0.3s ease-in;
 }
 
-/* Resume Embed */
-.resume-embed-actions {
+/* Resume Viewer */
+.resume-viewer {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.resume-viewer-toolbar {
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 1.25rem;
+    align-items: center;
+    justify-content: space-between;
+    background: #3d3f42;
+    padding: 0.7rem 1.25rem;
+    gap: 1rem;
 }
 
-.resume-action-link {
-    color: var(--primary-color);
+.viewer-filename {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.82rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.viewer-actions {
+    display: flex;
+    gap: 0.6rem;
+    flex-shrink: 0;
+}
+
+.viewer-btn {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
+    font-size: 0.8rem;
     font-weight: 600;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
-.resume-action-link:hover {
-    color: var(--secondary-color);
+.viewer-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.5);
 }
 
-.resume-iframe {
+.viewer-btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    color: var(--white);
+}
+
+.viewer-btn-primary:hover {
+    opacity: 0.88;
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+.resume-viewer-stage {
+    background: #525659;
+    padding: 2rem 3rem 2.5rem;
+}
+
+.resume-canvas-wrapper {
     width: 100%;
-    aspect-ratio: 8.5 / 11;
-    border: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#resume-canvas {
+    width: 100%;
+    display: block;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+}
+
+.resume-loading {
+    text-align: center;
+    padding: 3rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
 }
 
 /* Project Cards */
@@ -627,6 +688,52 @@ body {
     color: var(--secondary-color);
 }
 
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-name {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.footer-copy {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 0.82rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-container {
@@ -682,5 +789,20 @@ body {
 
     .main-content {
         padding: 2rem 1rem;
+    }
+
+    .resume-viewer-stage {
+        padding: 1.25rem;
+    }
+
+    .resume-viewer-toolbar {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .footer-links {
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
