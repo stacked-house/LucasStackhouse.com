@@ -3,7 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Stackhouse - Portfolio</title>
+    <meta name="description" content="Lucas Stackhouse — Full-stack software engineer and consultant specializing in production systems, automation, and enterprise solutions.">
+    <meta property="og:title" content="Lucas Stackhouse — Portfolio">
+    <meta property="og:description" content="Full-stack software engineer specializing in production systems, automation, and enterprise solutions. View my work, experience, and skills.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lucas Stackhouse — Portfolio">
+    <meta name="twitter:description" content="Full-stack software engineer specializing in production systems, automation, and enterprise solutions.">
+    <title>Lucas Stackhouse — Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +24,13 @@
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
-                    <li><a href="#resume" class="nav-link" data-page="resume">Professional Career</a></li>
+                    <li class="nav-item-dropdown">
+                        <button class="nav-link nav-dropdown-trigger" data-nav-page="resume">Professional Career <span class="dropdown-caret">▾</span></button>
+                        <ul class="nav-dropdown-menu">
+                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="timeline">Career Timeline</a></li>
+                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="resume-pdf">Full Resume</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#projects" class="nav-link" data-page="projects">Projects</a></li>
                     <li><a href="#skills" class="nav-link" data-page="skills">Skills</a></li>
                     <li><a href="#about" class="nav-link" data-page="about">About</a></li>
@@ -33,8 +47,12 @@
             <div class="hero">
                 <img src="Images/professional_photo.jpeg" alt="Lucas Stackhouse" class="profile-photo">
                 <div class="hero-text">
-                    <h2>Welcome</h2>
-                    <p>Full-stack developer and tech enthusiast</p>
+                    <h2>Full-Stack Engineer & Consultant</h2>
+                    <p>Building production systems that eliminate manual work and drive real results — from automating 480+ hours of annual effort to delivering enterprise portfolio management solutions.</p>
+                    <div class="hero-cta">
+                        <a href="Resume/Lucas_Resume.pdf" class="btn btn-white" download="Lucas_Stackhouse_Resume.pdf">Download Resume</a>
+                        <a href="#projects" class="btn btn-outline-white" data-page="projects">View My Work</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -43,63 +61,79 @@
         <section id="resume" class="page">
             <div class="page-content">
                 <h2>Professional Career</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Associate Consultant</h3>
-                            <p class="company">Planisware</p>
-                            <p class="date">January 2026 – Present</p>
-                            <ul>
-                                <li>Contributing to enterprise portfolio and project management solutions</li>
-                                <li>Delivering consulting services and technical expertise to clients</li>
-                            </ul>
-                        </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Contract Software Engineer</h3>
-                            <p class="company">Frontier Airlines</p>
-                            <p class="date">August 2025 – December 2025</p>
-                            <ul>
-                                <li>Designed & deployed full-stack web app automating multi-country tax forms & invoices, reducing quarterly manual effort from 125+ hours to ~6 hours</li>
-                                <li>Built React frontend, Flask backend, and PostgreSQL DB (hosted on Render)</li>
-                                <li>Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts</li>
-                                <li>Single-handedly delivered production system in ~850 hours, reducing invoicing time & cost >94% via full automation</li>
-                                <li>Enabled accounting team to reallocate 480+ hours annually to strategic initiatives</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="career-tab-switcher">
+                    <button class="career-tab active" data-tab="timeline">Career Timeline</button>
+                    <button class="career-tab" data-tab="resume-pdf">Full Resume</button>
+                </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Tax Intern - Software Development</h3>
-                            <p class="company">Frontier Airlines</p>
-                            <p class="date">June 2025 – August 2025</p>
-                            <ul>
-                                <li>Automated processes and applied data science to enhance indirect tax operations</li>
-                                <li>Tools utilized: Alteryx, Python, VS Code, Databricks, Microsoft Excel, Power BI</li>
-                            </ul>
+                <div class="career-panel active" id="panel-timeline">
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Associate Consultant</h3>
+                                <p class="company">Planisware</p>
+                                <p class="date">January 2026 – Present</p>
+                                <ul>
+                                    <li>Contributing to enterprise portfolio and project management solutions</li>
+                                    <li>Delivering consulting services and technical expertise to clients</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="timeline-item">
-                        <div class="timeline-marker"></div>
-                        <div class="timeline-content">
-                            <h3>Apple Lab Administrator</h3>
-                            <p class="company">University of Colorado Boulder - Office of Information Technology</p>
-                            <p class="date">August 2023 – August 2025</p>
-                            <ul>
-                                <li>Designed JAMF Pro workflows to automate software packaging & deployment across CU Boulder's Apple ecosystem</li>
-                                <li>Scripted Bash/Python automation for system admin tasks and performance analysis</li>
-                                <li>Troubleshot complex issues via data analysis; collaborated with IT teams to improve reliability</li>
-                                <li>Earned JAMF Certified Associate credential in macOS management</li>
-                            </ul>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Contract Software Engineer</h3>
+                                <p class="company">Frontier Airlines</p>
+                                <p class="date">August 2025 – December 2025</p>
+                                <ul>
+                                    <li>Designed & deployed full-stack web app automating multi-country tax forms & invoices, reducing quarterly manual effort from 125+ hours to ~6 hours</li>
+                                    <li>Built React frontend, Flask backend, and PostgreSQL DB (hosted on Render)</li>
+                                    <li>Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts</li>
+                                    <li>Single-handedly delivered production system in ~850 hours, reducing invoicing time & cost >94% via full automation</li>
+                                    <li>Enabled accounting team to reallocate 480+ hours annually to strategic initiatives</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Tax Intern - Software Development</h3>
+                                <p class="company">Frontier Airlines</p>
+                                <p class="date">June 2025 – August 2025</p>
+                                <ul>
+                                    <li>Automated processes and applied data science to enhance indirect tax operations</li>
+                                    <li>Tools utilized: Alteryx, Python, VS Code, Databricks, Microsoft Excel, Power BI</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Apple Lab Administrator</h3>
+                                <p class="company">University of Colorado Boulder - Office of Information Technology</p>
+                                <p class="date">August 2023 – August 2025</p>
+                                <ul>
+                                    <li>Designed JAMF Pro workflows to automate software packaging & deployment across CU Boulder's Apple ecosystem</li>
+                                    <li>Scripted Bash/Python automation for system admin tasks and performance analysis</li>
+                                    <li>Troubleshot complex issues via data analysis; collaborated with IT teams to improve reliability</li>
+                                    <li>Earned JAMF Certified Associate credential in macOS management</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="career-panel" id="panel-resume-pdf">
+                    <div class="resume-embed-actions">
+                        <a href="Resume/Lucas_Resume.pdf" target="_blank" class="resume-action-link">Open in new tab ↗</a>
+                        <a href="Resume/Lucas_Resume.pdf" download="Lucas_Stackhouse_Resume.pdf" class="resume-action-link">Download ↓</a>
+                    </div>
+                    <iframe src="Resume/Lucas_Resume.pdf#zoom=page-width" class="resume-iframe" title="Lucas Stackhouse Resume"></iframe>
                 </div>
             </div>
         </section>
