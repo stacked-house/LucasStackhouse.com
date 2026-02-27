@@ -1,12 +1,9 @@
 version: 1
 frontend:
   phases:
-    preBuild:
-      commands:
-        - npm install
     build:
       commands:
-        - cp -r common/* frontend/
+        - echo "No build step required"
   artifacts:
     baseDirectory: frontend
     files:
