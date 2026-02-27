@@ -32,8 +32,8 @@ document.querySelectorAll('[data-page]').forEach(el => {
             if (tabId === 'resume-pdf') renderResumePDF();
         }
 
-        // Update URL without triggering scroll
-        history.pushState(null, null, '#' + pageId);
+        // Update URL without triggering scroll — encode tab if present
+        history.pushState(null, null, '#' + (tabId ? `${pageId}/${tabId}` : pageId));
     });
 });
 
@@ -105,8 +105,24 @@ document.querySelectorAll('.career-tab').forEach(tab => {
         tab.classList.add('active');
         document.getElementById(`panel-${tabId}`).classList.add('active');
         if (tabId === 'resume-pdf') renderResumePDF();
+        // Persist tab in URL so refresh restores it
+        history.pushState(null, null, '#resume/' + tabId);
     });
 });
+
+// Contact form — compose mailto on submit
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name    = document.getElementById('contact-name').value;
+        const email   = document.getElementById('contact-email').value;
+        const subject = document.getElementById('contact-subject').value || 'Portfolio Contact';
+        const message = document.getElementById('contact-message').value;
+        const body    = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+        window.location.href = `mailto:lucas.stackhouse@colorado.edu?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+}
 
 // Prevent browser from restoring scroll position on reload
 if ('scrollRestoration' in history) {
@@ -116,8 +132,17 @@ if ('scrollRestoration' in history) {
 // Handle page load with hash
 window.addEventListener('load', () => {
     const hash = window.location.hash.slice(1) || 'home';
-    const target = document.querySelector(`.nav-link[data-page="${hash}"]`) ||
-                   document.querySelector(`.nav-dropdown-item[data-page="${hash}"]`);
+    const [pageId, tabId] = hash.split('/');
+
+    let target;
+    if (tabId) {
+        // Restore page + tab (e.g. #resume/resume-pdf)
+        target = document.querySelector(`.nav-dropdown-item[data-page="${pageId}"][data-tab="${tabId}"]`) ||
+                 document.querySelector(`[data-page="${pageId}"][data-tab="${tabId}"]`);
+    } else {
+        target = document.querySelector(`.nav-link[data-page="${pageId}"]`) ||
+                 document.querySelector(`.nav-dropdown-item[data-page="${pageId}"]`);
+    }
     if (target) target.click();
 
     // Double rAF ensures we scroll after the browser's own hash-scroll fires

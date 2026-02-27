@@ -12,23 +12,25 @@
     <meta name="twitter:description" content="Full-stack software engineer specializing in production systems, automation, and enterprise solutions.">
     <title>Lucas Stackhouse — Portfolio</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Header/Navigation -->
     <header class="header">
-        <div class="hero-section">
-            <div class="logo">
-                <h1>Lucas Stackhouse</h1>
-            </div>
+        <div class="header-inner">
+            <a href="#home" class="logo-link" data-page="home">Lucas Stackhouse</a>
             <nav class="navbar">
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
                     <li class="nav-item-dropdown">
-                        <button class="nav-link nav-dropdown-trigger" data-nav-page="resume">Professional Career <span class="dropdown-caret">▾</span></button>
+                        <button class="nav-link nav-dropdown-trigger" data-nav-page="resume">Career <span class="dropdown-caret">▾</span></button>
                         <ul class="nav-dropdown-menu">
-                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="timeline">Career Timeline</a></li>
-                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="resume-pdf">Full Resume</a></li>
+                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="timeline">Timeline</a></li>
+                            <li><a href="#" class="nav-dropdown-item" data-page="resume" data-tab="resume-pdf">Resume PDF</a></li>
                         </ul>
                     </li>
                     <li><a href="#projects" class="nav-link" data-page="projects">Projects</a></li>
@@ -42,17 +44,39 @@
 
     <!-- Main Content -->
     <main class="main-content">
+
         <!-- Home Page -->
         <section id="home" class="page active">
-            <div class="hero">
-                <img src="Images/professional_photo.jpeg" alt="Lucas Stackhouse" class="profile-photo">
-                <div class="hero-text">
-                    <h2>Full-Stack Engineer & Consultant</h2>
-                    <p>Building production systems that eliminate manual work and drive real results — from automating 480+ hours of annual effort to delivering enterprise portfolio management solutions.</p>
+            <div class="hero-wrap">
+                <div class="hero-content">
+                    <p class="hero-eyebrow">Full-Stack Engineer &amp; Consultant</p>
+                    <h2 class="hero-name">Lucas Stackhouse</h2>
+                    <p class="hero-tagline">Building production systems that eliminate manual work and drive real results — from automating 480+ hours of annual effort to delivering enterprise solutions at Planisware.</p>
                     <div class="hero-cta">
-                        <a href="Resume/Lucas_Resume.pdf" class="btn btn-white" download="Lucas_Stackhouse_Resume.pdf">Download Resume</a>
-                        <a href="#projects" class="btn btn-outline-white" data-page="projects">View My Work</a>
+                        <a href="Resume/Lucas_Resume.pdf" class="btn btn-primary" download="Lucas_Stackhouse_Resume.pdf">Download Resume</a>
+                        <a href="#projects" class="btn btn-ghost" data-page="projects">View My Work →</a>
                     </div>
+                </div>
+                <div class="hero-photo-wrap">
+                    <img src="Images/professional_photo.jpeg" alt="Lucas Stackhouse" class="profile-photo">
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <span class="stat-number">&gt;94%</span>
+                    <span class="stat-label">Cost reduction via full automation</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">480+</span>
+                    <span class="stat-label">Hours reallocated annually</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">850hr</span>
+                    <span class="stat-label">Solo production system delivery</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">4+</span>
+                    <span class="stat-label">Languages in production use</span>
                 </div>
             </div>
         </section>
@@ -69,6 +93,7 @@
 
                 <div class="career-panel active" id="panel-timeline">
                     <div class="timeline">
+
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
@@ -89,10 +114,10 @@
                                 <p class="company">Frontier Airlines</p>
                                 <p class="date">August 2025 – December 2025</p>
                                 <ul>
-                                    <li>Designed & deployed full-stack web app automating multi-country tax forms & invoices, reducing quarterly manual effort from 125+ hours to ~6 hours</li>
-                                    <li>Built React frontend, Flask backend, and PostgreSQL DB (hosted on Render)</li>
+                                    <li>Designed &amp; deployed full-stack web app automating multi-country tax forms &amp; invoices, reducing quarterly manual effort from 125+ hours to ~6 hours</li>
+                                    <li>Built React frontend, Flask backend, and PostgreSQL DB hosted on AWS</li>
                                     <li>Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts</li>
-                                    <li>Single-handedly delivered production system in ~850 hours, reducing invoicing time & cost >94% via full automation</li>
+                                    <li>Single-handedly delivered production system in ~850 hours, reducing invoicing time &amp; cost &gt;94% via full automation</li>
                                     <li>Enabled accounting team to reallocate 480+ hours annually to strategic initiatives</li>
                                 </ul>
                             </div>
@@ -101,7 +126,7 @@
                         <div class="timeline-item">
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
-                                <h3>Tax Intern - Software Development</h3>
+                                <h3>Tax Intern — Software Development</h3>
                                 <p class="company">Frontier Airlines</p>
                                 <p class="date">June 2025 – August 2025</p>
                                 <ul>
@@ -115,16 +140,17 @@
                             <div class="timeline-marker"></div>
                             <div class="timeline-content">
                                 <h3>Apple Lab Administrator</h3>
-                                <p class="company">University of Colorado Boulder - Office of Information Technology</p>
+                                <p class="company">University of Colorado Boulder — Office of Information Technology</p>
                                 <p class="date">August 2023 – August 2025</p>
                                 <ul>
-                                    <li>Designed JAMF Pro workflows to automate software packaging & deployment across CU Boulder's Apple ecosystem</li>
+                                    <li>Designed JAMF Pro workflows to automate software packaging &amp; deployment across CU Boulder's Apple ecosystem</li>
                                     <li>Scripted Bash/Python automation for system admin tasks and performance analysis</li>
                                     <li>Troubleshot complex issues via data analysis; collaborated with IT teams to improve reliability</li>
                                     <li>Earned JAMF Certified Associate credential in macOS management</li>
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </div>
 
@@ -153,49 +179,60 @@
             <div class="page-content">
                 <h2>Projects</h2>
                 <div class="projects-section">
+
                     <div class="project-card">
-                        <h3>Tax Automation System</h3>
-                        <p class="project-company">Frontier Airlines</p>
-                        <p class="project-date">August 2025</p>
-                        <p class="project-description">Full-stack web application automating multi-country tax forms and invoicing processes, reducing manual quarterly effort from 125+ hours to ~6 hours and eliminating human error.</p>
-                        <div class="project-tech">
-                            <span>React</span>
-                            <span>Flask</span>
-                            <span>PostgreSQL</span>
-                            <span>Render</span>
-                            <span>Azure AD SSO</span>
-                            <span>ReportLab</span>
+                        <div class="project-accent accent-primary"></div>
+                        <div class="project-body">
+                            <h3>Tax Automation System</h3>
+                            <p class="project-company">Frontier Airlines</p>
+                            <p class="project-date">August – December 2025</p>
+                            <p class="project-description">Full-stack web application automating multi-country tax forms and invoicing processes, reducing manual quarterly effort from 125+ hours to ~6 hours and eliminating human error.</p>
+                            <div class="project-tech">
+                                <span>React</span>
+                                <span>Flask</span>
+                                <span>PostgreSQL</span>
+                                <span>AWS</span>
+                                <span>Azure AD SSO</span>
+                                <span>ReportLab</span>
+                            </div>
+                            <p class="project-highlight">Reduced invoicing time &amp; cost &gt;94% &nbsp;·&nbsp; 480+ hours reallocated annually</p>
                         </div>
-                        <p class="project-highlight">📊 Reduced invoicing time & cost >94% via full automation | 480+ hours reallocated annually</p>
                     </div>
 
                     <div class="project-card">
-                        <h3>CrowdSolve Migration - Senior Capstone</h3>
-                        <p class="project-company">University of Colorado Boulder</p>
-                        <p class="project-date">August 2025 – Present</p>
-                        <p class="project-description">Migrating client marketing site and no-code app into unified low-code hub for entrepreneur onboarding, AI curriculum, startup showcase, and investor discovery.</p>
-                        <div class="project-tech">
-                            <span>Circle.so</span>
-                            <span>UX Design</span>
-                            <span>Agile</span>
-                            <span>AI Integration</span>
+                        <div class="project-accent accent-teal"></div>
+                        <div class="project-body">
+                            <h3>CrowdSolve — Senior Capstone</h3>
+                            <p class="project-company">University of Colorado Boulder</p>
+                            <p class="project-date">August 2025 – Present</p>
+                            <p class="project-description">Migrating client marketing site and no-code app into a unified low-code hub for entrepreneur onboarding, AI curriculum, startup showcase, and investor discovery.</p>
+                            <div class="project-tech">
+                                <span>Circle.so</span>
+                                <span>UX Design</span>
+                                <span>Agile</span>
+                                <span>AI Integration</span>
+                            </div>
+                            <p class="project-highlight">Integrated "Mechanical Mentor" AI &nbsp;·&nbsp; Team of 5 &nbsp;·&nbsp; 2-week sprints</p>
                         </div>
-                        <p class="project-highlight">🤖 Integrated "Mechanical Mentor" AI with real-time progress tracking | Team of 5 with 2-week sprints</p>
                     </div>
 
                     <div class="project-card">
-                        <h3>JAMF Pro Automation Workflows</h3>
-                        <p class="project-company">University of Colorado Boulder IT</p>
-                        <p class="project-date">August 2023 – August 2025</p>
-                        <p class="project-description">Designed and implemented JAMF Pro workflows to automate software packaging and deployment across CU Boulder's Apple ecosystem, boosting macOS efficiency campus-wide.</p>
-                        <div class="project-tech">
-                            <span>JAMF Pro</span>
-                            <span>Bash</span>
-                            <span>Python</span>
-                            <span>macOS</span>
+                        <div class="project-accent accent-amber"></div>
+                        <div class="project-body">
+                            <h3>JAMF Pro Automation Workflows</h3>
+                            <p class="project-company">University of Colorado Boulder IT</p>
+                            <p class="project-date">August 2023 – August 2025</p>
+                            <p class="project-description">Designed and implemented JAMF Pro workflows to automate software packaging and deployment across CU Boulder's Apple ecosystem, boosting macOS efficiency campus-wide.</p>
+                            <div class="project-tech">
+                                <span>JAMF Pro</span>
+                                <span>Bash</span>
+                                <span>Python</span>
+                                <span>macOS</span>
+                            </div>
+                            <p class="project-highlight">JAMF Certified Associate &nbsp;·&nbsp; Campus-wide deployment impact</p>
                         </div>
-                        <p class="project-highlight">🏆 Earned JAMF Certified Associate credential in macOS management</p>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -205,6 +242,7 @@
             <div class="page-content">
                 <h2>Skills</h2>
                 <div class="skills-section">
+
                     <div class="skill-category">
                         <h3>Languages</h3>
                         <div class="skill-tags">
@@ -225,12 +263,12 @@
                             <span class="skill-tag">Node.js</span>
                             <span class="skill-tag">Vite</span>
                             <span class="skill-tag">Axios</span>
-                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">HTML / CSS</span>
                         </div>
                     </div>
 
                     <div class="skill-category">
-                        <h3>Database & Data</h3>
+                        <h3>Database &amp; Data</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">PostgreSQL</span>
                             <span class="skill-tag">MySQL</span>
@@ -242,19 +280,20 @@
                     </div>
 
                     <div class="skill-category">
-                        <h3>Developer Tools & Cloud</h3>
+                        <h3>Developer Tools &amp; Cloud</h3>
                         <div class="skill-tags">
                             <span class="skill-tag">VS Code</span>
-                            <span class="skill-tag">Git/Github</span>
-                            <span class="skill-tag">Github Copilot</span>
+                            <span class="skill-tag">Git / GitHub</span>
+                            <span class="skill-tag">GitHub Copilot</span>
                             <span class="skill-tag">JAMF Pro</span>
                             <span class="skill-tag">Docker</span>
-                            <span class="skill-tag">Render</span>
+                            <span class="skill-tag">AWS Amplify</span>
                             <span class="skill-tag">Azure AD</span>
                             <span class="skill-tag">DBeaver</span>
                             <span class="skill-tag">JupyterLab</span>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -264,19 +303,42 @@
             <div class="page-content">
                 <h2>About</h2>
                 <div class="about-section">
-                    <p>I'm a full-stack software engineer and computer science student at the University of Colorado Boulder (graduating May 2026) with a passion for building practical solutions that solve real-world problems.</p>
-                    
-                    <p>Currently working as an Associate Consultant at Planisware, I specialize in enterprise software solutions and helping organizations optimize their processes through technology. My background includes designing and deploying production systems that significantly reduce manual effort and increase efficiency.</p>
-                    
-                    <p>I'm experienced in building end-to-end applications using modern web technologies like React, Flask, and PostgreSQL, with expertise in cloud deployment, database design, and system automation. I'm particularly interested in full-stack development, data science applications, and DevOps practices.</p>
-                    
-                    <p>When I'm not coding, you can find me collaborating on agile teams, learning new technologies, and exploring innovative solutions to complex problems. I'm always eager to take on new challenges and contribute to impactful projects.</p>
-                    
-                    <div class="about-contact">
-                        <h3>Let's Connect</h3>
-                        <p><strong>Email:</strong> <a href="mailto:lucas.stackhouse@colorado.edu">lucas.stackhouse@colorado.edu</a></p>
-                        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/lucas-stackhouse" target="_blank">linkedin.com/in/lucas-stackhouse</a></p>
-                        <p><strong>GitHub:</strong> <a href="https://github.com/stacked-house" target="_blank">github.com/stacked-house</a></p>
+                    <div class="about-intro">
+                        <p>I'm a full-stack software engineer and computer science student at the University of Colorado Boulder (graduating May 2026) with a passion for building practical solutions that solve real-world problems.</p>
+                        <p>Currently working as an Associate Consultant at Planisware, I specialize in enterprise software solutions and helping organizations optimize their processes through technology. My background includes designing and deploying production systems that significantly reduce manual effort and increase efficiency.</p>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-facts">
+                            <div class="fact-item">
+                                <span class="fact-label">Current Role</span>
+                                <span class="fact-value">Associate Consultant @ Planisware</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Education</span>
+                                <span class="fact-value">B.S. Computer Science — CU Boulder, May 2026</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Focus Areas</span>
+                                <span class="fact-value">Full-stack dev · Data science · DevOps</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Email</span>
+                                <span class="fact-value"><a href="mailto:lucas.stackhouse@colorado.edu">lucas.stackhouse@colorado.edu</a></span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">LinkedIn</span>
+                                <span class="fact-value"><a href="https://www.linkedin.com/in/lucas-stackhouse" target="_blank">linkedin.com/in/lucas-stackhouse</a></span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">GitHub</span>
+                                <span class="fact-value"><a href="https://github.com/stacked-house" target="_blank">github.com/stacked-house</a></span>
+                            </div>
+                        </div>
+                        <div class="about-body">
+                            <p>I'm experienced in building end-to-end applications using modern web technologies like React, Flask, and PostgreSQL, with expertise in cloud deployment, database design, and system automation.</p>
+                            <p>I'm particularly interested in full-stack development, data science applications, and DevOps practices. I thrive in environments where I can own problems end-to-end — from database schema to deployed UI — and I have a track record of shipping production systems that make a measurable difference.</p>
+                            <p>I'm always eager to take on new challenges and contribute to impactful projects. If you're working on something interesting, I'd love to hear about it.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -287,27 +349,59 @@
             <div class="page-content">
                 <h2>Contact</h2>
                 <div class="contact-section">
-                    <p>I'd love to hear from you! Feel free to reach out via email or connect with me on social media.</p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <h3>📧 Email</h3>
-                            <a href="mailto:lucas.stackhouse@colorado.edu">lucas.stackhouse@colorado.edu</a>
+                    <div class="contact-layout">
+                        <div class="contact-form-wrap">
+                            <p class="contact-intro">Have a project in mind or want to connect? Send me a message and I'll get back to you.</p>
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="contact-name">Name</label>
+                                        <input type="text" id="contact-name" placeholder="Your name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Email</label>
+                                        <input type="email" id="contact-email" placeholder="your@email.com" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-subject">Subject</label>
+                                    <input type="text" id="contact-subject" placeholder="What's this about?">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message">Message</label>
+                                    <textarea id="contact-message" rows="5" placeholder="Your message..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </form>
                         </div>
-                        
-                        <div class="contact-item">
-                            <h3>💼 LinkedIn</h3>
-                            <a href="https://www.linkedin.com/in/lucas-stackhouse" target="_blank">linkedin.com/in/lucas-stackhouse</a>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <h3>💻 GitHub</h3>
-                            <a href="https://github.com/stacked-house" target="_blank">github.com/stacked-house</a>
+                        <div class="contact-links">
+                            <a href="mailto:lucas.stackhouse@colorado.edu" class="contact-link-card">
+                                <span class="contact-link-icon">✉</span>
+                                <div>
+                                    <p class="contact-link-label">Email</p>
+                                    <p class="contact-link-value">lucas.stackhouse@colorado.edu</p>
+                                </div>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lucas-stackhouse" target="_blank" class="contact-link-card">
+                                <span class="contact-link-icon">in</span>
+                                <div>
+                                    <p class="contact-link-label">LinkedIn</p>
+                                    <p class="contact-link-value">linkedin.com/in/lucas-stackhouse</p>
+                                </div>
+                            </a>
+                            <a href="https://github.com/stacked-house" target="_blank" class="contact-link-card">
+                                <span class="contact-link-icon">gh</span>
+                                <div>
+                                    <p class="contact-link-label">GitHub</p>
+                                    <p class="contact-link-value">github.com/stacked-house</p>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer">
