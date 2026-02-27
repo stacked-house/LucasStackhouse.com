@@ -638,6 +638,23 @@ body {
     font-weight: 600;
 }
 
+.project-links {
+    margin-bottom: 0.5rem;
+}
+
+.project-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--primary-dk);
+}
+
 .project-highlight {
     color: var(--text-muted);
     font-size: 0.81rem;
