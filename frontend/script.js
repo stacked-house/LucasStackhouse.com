@@ -105,9 +105,143 @@ document.querySelectorAll('.career-tab').forEach(tab => {
         tab.classList.add('active');
         document.getElementById(`panel-${tabId}`).classList.add('active');
         if (tabId === 'resume-pdf') renderResumePDF();
+        if (tabId === 'timeline') requestAnimationFrame(scrollTimelineToEnd);
         // Persist tab in URL so refresh restores it
         history.pushState(null, null, '#resume/' + tabId);
     });
+});
+
+// ── Horizontal Timeline ───────────────────────────────────────────
+
+const TL_JOBS = [
+    {
+        role: 'Personal Trainer',
+        co: 'CU Boulder Recreation Center',
+        date: 'January 2018 – November 2019',
+        color: 'early',
+        bullets: [
+            'Designed individualized training programs for student athletes and general population clients',
+            'Led group fitness classes, building strong communication and motivational coaching skills',
+            'Developed a client-first mindset and resilience working in a high-energy service environment',
+        ]
+    },
+    {
+        role: 'Landscaper',
+        co: 'Native Edge Landscapes',
+        date: 'August 2019 – May 2020',
+        color: 'early',
+        bullets: [
+            'Designed and installed residential and commercial landscape projects',
+            'Operated equipment and managed physically demanding worksite conditions under tight deadlines',
+            'Developed strong attention to detail and project efficiency working in a demanding environment',
+        ]
+    },
+    {
+        role: 'Carpenter',
+        co: 'Next Generation Construction',
+        date: 'November 2020 – August 2023',
+        color: 'early',
+        bullets: [
+            'Constructed residential projects including framing, finish carpentry, and custom installations',
+            'Interpreted technical blueprints and executed detailed construction plans with precision',
+            'Managed tools, materials, and timelines across multiple concurrent projects',
+            'Developed problem-solving and spatial reasoning skills that later translated directly to software engineering',
+        ]
+    },
+    {
+        role: 'Apple Lab Administrator',
+        co: 'University of Colorado Boulder — Office of Information Technology',
+        date: 'August 2023 – August 2025',
+        color: 'teal',
+        bullets: [
+            'Designed JAMF Pro workflows to automate software packaging & deployment across CU Boulder\'s Apple ecosystem',
+            'Scripted Bash and Python automation for system administration tasks and performance analysis',
+            'Troubleshot complex issues via data analysis; collaborated with IT teams to improve fleet reliability',
+            'Earned JAMF Certified Associate credential in macOS management',
+        ]
+    },
+    {
+        role: 'Tax Intern — Software Development',
+        co: 'Frontier Airlines',
+        date: 'June 2025 – August 2025',
+        color: 'amber',
+        bullets: [
+            'Automated processes and applied data science to enhance indirect tax operations',
+            'Tools utilized: Alteryx, Python, VS Code, Databricks, Microsoft Excel, Power BI',
+        ]
+    },
+    {
+        role: 'Contract Software Engineer',
+        co: 'Frontier Airlines',
+        date: 'August 2025 – December 2025',
+        color: 'primary',
+        bullets: [
+            'Designed & deployed full-stack web app automating multi-country tax forms & invoices — reducing quarterly manual effort from 125+ hours to ~6 hours',
+            'Built React frontend, Flask backend, and PostgreSQL database hosted on AWS',
+            'Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts',
+            'Single-handedly delivered production system in ~850 hours, reducing invoicing time & cost >94% via full automation',
+            'Enabled accounting team to reallocate 480+ hours annually to strategic initiatives',
+        ]
+    },
+    {
+        role: 'Associate Consultant',
+        co: 'Planisware',
+        date: 'January 2026 – Present',
+        color: 'primary',
+        bullets: [
+            'Contributing to enterprise portfolio and project management (PPM) solutions for global clients',
+            'Delivering consulting services and technical expertise to help organizations optimize their processes',
+        ]
+    },
+];
+
+function scrollTimelineToEnd() {
+    const scroll = document.getElementById('tl-scroll');
+    if (scroll) scroll.scrollLeft = scroll.scrollWidth;
+}
+
+// Card click → open / swap detail drawer
+document.querySelectorAll('.tl-card-inner').forEach(card => {
+    card.addEventListener('click', () => {
+        const item    = card.closest('.tl-item');
+        const jobIdx  = parseInt(item.getAttribute('data-job'));
+        const job     = TL_JOBS[jobIdx];
+        const detail  = document.getElementById('tl-detail');
+        const prevActive = document.querySelector('.tl-item.tl-active');
+
+        // Click same card → close
+        if (prevActive === item) {
+            item.classList.remove('tl-active');
+            detail.classList.remove('open');
+            return;
+        }
+
+        if (prevActive) prevActive.classList.remove('tl-active');
+        item.classList.add('tl-active');
+
+        document.getElementById('tl-detail-role').textContent  = job.role;
+        document.getElementById('tl-detail-co').textContent    = job.co;
+        document.getElementById('tl-detail-date').textContent  = job.date;
+        document.getElementById('tl-detail-bullets').innerHTML =
+            job.bullets.map(b => `<li>${b}</li>`).join('');
+        detail.setAttribute('data-color', job.color);
+        detail.classList.add('open');
+    });
+});
+
+// Close button
+document.getElementById('tl-detail-close').addEventListener('click', () => {
+    document.querySelector('.tl-item.tl-active')?.classList.remove('tl-active');
+    document.getElementById('tl-detail').classList.remove('open');
+});
+
+// Arrow navigation
+const SCROLL_STEP = 260;
+document.getElementById('tl-prev').addEventListener('click', () => {
+    document.getElementById('tl-scroll').scrollBy({ left: -SCROLL_STEP, behavior: 'smooth' });
+});
+document.getElementById('tl-next').addEventListener('click', () => {
+    document.getElementById('tl-scroll').scrollBy({ left: SCROLL_STEP, behavior: 'smooth' });
 });
 
 // Contact form — compose mailto on submit
@@ -144,6 +278,11 @@ window.addEventListener('load', () => {
                  document.querySelector(`.nav-dropdown-item[data-page="${pageId}"]`);
     }
     if (target) target.click();
+
+    // If landing on the timeline tab, scroll it to the most recent entry
+    if (!tabId || tabId === 'timeline') {
+        requestAnimationFrame(scrollTimelineToEnd);
+    }
 
     // Double rAF ensures we scroll after the browser's own hash-scroll fires
     requestAnimationFrame(() => {

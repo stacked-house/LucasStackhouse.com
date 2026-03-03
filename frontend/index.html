@@ -92,66 +92,121 @@
                 </div>
 
                 <div class="career-panel active" id="panel-timeline">
-                    <div class="timeline">
+                    <div class="tl-wrap">
+                        <div class="tl-nav-row">
+                            <button class="tl-arrow" id="tl-prev" aria-label="Earlier">&#8249;</button>
+                            <div class="tl-scroll" id="tl-scroll">
+                                <div class="tl-track">
+                                    <div class="tl-line"></div>
 
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Associate Consultant</h3>
-                                <p class="company">Planisware</p>
-                                <p class="date">January 2026 – Present</p>
-                                <ul>
-                                    <li>Contributing to enterprise portfolio and project management solutions</li>
-                                    <li>Delivering consulting services and technical expertise to clients</li>
-                                </ul>
+                                    <!-- 1. Personal Trainer — above — early -->
+                                    <div class="tl-item tl-above" data-job="0">
+                                        <div class="tl-card-inner tl-early">
+                                            <span class="tl-date">Jan 2018 – Nov 2019</span>
+                                            <h4 class="tl-role">Personal Trainer</h4>
+                                            <p class="tl-co">CU Boulder Recreation</p>
+                                            <p class="tl-teaser">Coached student athletes &amp; led group fitness programs</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                        <div class="tl-connector"></div>
+                                        <div class="tl-dot tl-dot-early"></div>
+                                    </div>
+
+                                    <!-- 2. Landscaper — below — early -->
+                                    <div class="tl-item tl-below" data-job="1">
+                                        <div class="tl-dot tl-dot-early"></div>
+                                        <div class="tl-connector"></div>
+                                        <div class="tl-card-inner tl-early">
+                                            <span class="tl-date">Aug 2019 – May 2020</span>
+                                            <h4 class="tl-role">Landscaper</h4>
+                                            <p class="tl-co">Native Edge Landscapes</p>
+                                            <p class="tl-teaser">Designed &amp; installed residential and commercial landscapes</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 3. Carpenter — above — early -->
+                                    <div class="tl-item tl-above" data-job="2">
+                                        <div class="tl-card-inner tl-early">
+                                            <span class="tl-date">Nov 2020 – Aug 2023</span>
+                                            <h4 class="tl-role">Carpenter</h4>
+                                            <p class="tl-co">Next Generation Construction</p>
+                                            <p class="tl-teaser">Built residential structures from framing through finish</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                        <div class="tl-connector"></div>
+                                        <div class="tl-dot tl-dot-early"></div>
+                                    </div>
+
+                                    <!-- 4. Apple Lab — below — tech/teal -->
+                                    <div class="tl-item tl-below" data-job="3">
+                                        <div class="tl-dot tl-dot-teal"></div>
+                                        <div class="tl-connector tl-conn-teal"></div>
+                                        <div class="tl-card-inner tl-tech tl-tech-teal">
+                                            <span class="tl-date">Aug 2023 – Aug 2025</span>
+                                            <h4 class="tl-role">Apple Lab Administrator</h4>
+                                            <p class="tl-co">CU Boulder — OIT</p>
+                                            <p class="tl-teaser">Automated macOS fleet management across campus</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 5. Tax Intern — above — tech/amber -->
+                                    <div class="tl-item tl-above" data-job="4">
+                                        <div class="tl-card-inner tl-tech tl-tech-amber">
+                                            <span class="tl-date">Jun – Aug 2025</span>
+                                            <h4 class="tl-role">Tax Intern — Software Dev</h4>
+                                            <p class="tl-co">Frontier Airlines</p>
+                                            <p class="tl-teaser">Applied data science to automate indirect tax ops</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                        <div class="tl-connector tl-conn-amber"></div>
+                                        <div class="tl-dot tl-dot-amber"></div>
+                                    </div>
+
+                                    <!-- 6. Contract SWE — below — tech/primary -->
+                                    <div class="tl-item tl-below" data-job="5">
+                                        <div class="tl-dot tl-dot-primary"></div>
+                                        <div class="tl-connector tl-conn-primary"></div>
+                                        <div class="tl-card-inner tl-tech tl-tech-primary">
+                                            <span class="tl-date">Aug – Dec 2025</span>
+                                            <h4 class="tl-role">Contract Software Engineer</h4>
+                                            <p class="tl-co">Frontier Airlines</p>
+                                            <p class="tl-teaser">Full-stack tax automation — cut 125+ hr/qtr to ~6</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- 7. Planisware — above — tech/primary, current -->
+                                    <div class="tl-item tl-above" data-job="6">
+                                        <div class="tl-card-inner tl-tech tl-tech-primary">
+                                            <span class="tl-now">● Now</span>
+                                            <span class="tl-date">Jan 2026 – Present</span>
+                                            <h4 class="tl-role">Associate Consultant</h4>
+                                            <p class="tl-co">Planisware</p>
+                                            <p class="tl-teaser">Enterprise PPM consulting &amp; client solutions delivery</p>
+                                            <span class="tl-hint">Details →</span>
+                                        </div>
+                                        <div class="tl-connector tl-conn-primary"></div>
+                                        <div class="tl-dot tl-dot-primary tl-dot-pulse"></div>
+                                    </div>
+
+                                </div><!-- .tl-track -->
+                            </div><!-- .tl-scroll -->
+                            <button class="tl-arrow" id="tl-next" aria-label="More recent">&#8250;</button>
+                        </div><!-- .tl-nav-row -->
+
+                        <!-- Detail drawer -->
+                        <div class="tl-detail" id="tl-detail">
+                            <div class="tl-detail-inner">
+                                <button class="tl-detail-close" id="tl-detail-close">&#10005;</button>
+                                <p class="tl-detail-date" id="tl-detail-date"></p>
+                                <h3 class="tl-detail-role" id="tl-detail-role"></h3>
+                                <p class="tl-detail-co" id="tl-detail-co"></p>
+                                <ul class="tl-detail-bullets" id="tl-detail-bullets"></ul>
                             </div>
                         </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Contract Software Engineer</h3>
-                                <p class="company">Frontier Airlines</p>
-                                <p class="date">August 2025 – December 2025</p>
-                                <ul>
-                                    <li>Designed &amp; deployed full-stack web app automating multi-country tax forms &amp; invoices, reducing quarterly manual effort from 125+ hours to ~6 hours</li>
-                                    <li>Built React frontend, Flask backend, and PostgreSQL DB hosted on AWS</li>
-                                    <li>Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts</li>
-                                    <li>Single-handedly delivered production system in ~850 hours, reducing invoicing time &amp; cost &gt;94% via full automation</li>
-                                    <li>Enabled accounting team to reallocate 480+ hours annually to strategic initiatives</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Tax Intern — Software Development</h3>
-                                <p class="company">Frontier Airlines</p>
-                                <p class="date">June 2025 – August 2025</p>
-                                <ul>
-                                    <li>Automated processes and applied data science to enhance indirect tax operations</li>
-                                    <li>Tools utilized: Alteryx, Python, VS Code, Databricks, Microsoft Excel, Power BI</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <h3>Apple Lab Administrator</h3>
-                                <p class="company">University of Colorado Boulder — Office of Information Technology</p>
-                                <p class="date">August 2023 – August 2025</p>
-                                <ul>
-                                    <li>Designed JAMF Pro workflows to automate software packaging &amp; deployment across CU Boulder's Apple ecosystem</li>
-                                    <li>Scripted Bash/Python automation for system admin tasks and performance analysis</li>
-                                    <li>Troubleshot complex issues via data analysis; collaborated with IT teams to improve reliability</li>
-                                    <li>Earned JAMF Certified Associate credential in macOS management</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </div>
+                    </div><!-- .tl-wrap -->
                 </div>
 
                 <div class="career-panel" id="panel-resume-pdf">
