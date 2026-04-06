@@ -122,7 +122,7 @@ const TL_JOBS = [
         bullets: [
             'Designed individualized training programs for student athletes and general population clients',
             'Led group fitness classes, building strong communication and motivational coaching skills',
-            'Developed a client-first mindset and resilience working in a high-energy service environment',
+            'Developed a client focused mindset and resilience working in a demanding service environment',
         ]
     },
     {
@@ -145,12 +145,12 @@ const TL_JOBS = [
             'Constructed residential projects including framing, finish carpentry, and custom installations',
             'Interpreted technical blueprints and executed detailed construction plans with precision',
             'Managed tools, materials, and timelines across multiple concurrent projects',
-            'Developed problem-solving and spatial reasoning skills that later translated directly to software engineering',
+            'Developed problem solving and spatial reasoning skills that later translated directly to software engineering',
         ]
     },
     {
         role: 'Apple Lab Administrator',
-        co: 'University of Colorado Boulder — Office of Information Technology',
+        co: 'University of Colorado Boulder, Office of Information Technology',
         date: 'August 2023 – August 2025',
         color: 'teal',
         bullets: [
@@ -161,7 +161,7 @@ const TL_JOBS = [
         ]
     },
     {
-        role: 'Tax Intern — Software Development',
+        role: 'Tax Intern, Software Development',
         co: 'Frontier Airlines',
         date: 'June 2025 – August 2025',
         color: 'amber',
@@ -176,10 +176,10 @@ const TL_JOBS = [
         date: 'August 2025 – December 2025',
         color: 'primary',
         bullets: [
-            'Designed & deployed full-stack web app automating multi-country tax forms & invoices — reducing quarterly manual effort from 125+ hours to ~6 hours',
+            'Designed and deployed a web app automating tax forms and invoices across multiple countries, reducing quarterly manual effort from 125+ hours to ~6 hours',
             'Built React frontend, Flask backend, and PostgreSQL database hosted on AWS',
             'Integrated Azure AD SSO, ReportLab PDF generation, dynamic tax logic, and automated backups with email alerts',
-            'Single-handedly delivered production system in ~850 hours, reducing invoicing time & cost >94% via full automation',
+            'Independently delivered production system in ~850 hours, reducing invoicing time and cost by over 94% via full automation',
             'Enabled accounting team to reallocate 480+ hours annually to strategic initiatives',
         ]
     },
@@ -236,7 +236,7 @@ document.getElementById('tl-detail-close').addEventListener('click', () => {
 });
 
 // Arrow navigation
-const SCROLL_STEP = 260;
+const SCROLL_STEP = 300;
 document.getElementById('tl-prev').addEventListener('click', () => {
     document.getElementById('tl-scroll').scrollBy({ left: -SCROLL_STEP, behavior: 'smooth' });
 });
